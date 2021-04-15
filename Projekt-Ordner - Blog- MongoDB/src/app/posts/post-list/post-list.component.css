@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@400;600&display=swap');
+
+
+:host{
+  display: block;
+  margin-top: 16px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.info-text {
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  margin-top: 1%;
+  font-family: 'Nunito', sans-serif;
+}
+
+mat-expansion-panel {
+  color: white;
+  font-size: 18px;
+  width: 35%;
+  margin: 0 auto;
+  margin-bottom: 1.7%;
+  background-color: #739F95;
+  border: 3px solid white;
+  font-family: 'Nunito', sans-serif;
+}
+
+mat-expansion-panel-header {
+  font-family: 'Nunito', sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.inhalt {
+  text-align: left;
+  justify-content: left;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.edit {
+  color: white;
+  background-color: rgb(86, 129, 223);
+  border: 2px solid white;
+  font-family: 'Nunito', sans-serif;
+}
+
+.delete {
+  color: white;
+  background-color: rgb(196, 51, 51);
+  border: 2px solid white;
+  font-family: 'Nunito', sans-serif;
+}
+
+.delete:hover {
+  background-color: red;
+  /* backdrop-filter: grayscale(30%); */
+}
+
+.edit:hover {
+  background-color: rgb(43, 59, 202);
+}
+
+.post-bild {
+  /* justify-content: center; */
+  text-align: center;
+  width: 100%;
+}
+
+.post-bild img {
+  margin-top: 2%;
+  width: 100%;
+  /* height: 310.56px; */
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+mat-paginator {
+  background-color: #739F95;
+  color: white;
+  margin-left: 47.5%; 
+  border: 3px solid orange;
+  width: 20%; 
+  margin-top: 1%;
+  /* height: 60px;  */
+  /* margin-bottom: 1%;  */
+}
+
+.info-text {
+  margin-top: 15%;
+}

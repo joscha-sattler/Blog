@@ -1,0 +1,63 @@
+
+<h1 *ngIf="mode=='edit'">Bearbeitungs-Mode</h1>
+<h1 *ngIf="mode=='create'">Post erstellen</h1>
+
+<mat-card >
+  <form [formGroup]="form"  (submit)="onSavePost()">
+
+    <!-- Titel -->
+
+  <mat-form-field>
+    <label>Titel:</label> <br>
+    <input
+      matInput
+      type="text"
+      formControlName="title"
+     >
+
+    <!-- Error: Titel -->
+
+    <mat-error *ngIf="form.get('title').invalid">Gib einen Titel mit mindestens 5 Zeichen ein</mat-error>
+
+  </mat-form-field>
+
+    <!-- Bild hochladen Button -->
+
+  <div>
+    <button mat-button (click)="filePicker.click()" type="button"> Bild hochladen </button>
+    <input type="file" #filePicker (change)="onImagePicked($event)">    
+  </div>
+
+  <!-- <div *ngIf="form.get('image').errors.required">Bild darf nicht fehlen!</div> -->
+<!--   <mat-error class="bilderror" *ngIf="form.get('image').errors.require">Nur Bilddateien sind erlaubt!</mat-error> -->
+
+  <div class="bildvorschau" *ngIf="bildvorschau != '' && bildvorschau!= null">
+    <img [src]="bildvorschau" [alt]="form.value.title">
+  </div>
+
+    <!-- Inhalt -->
+
+  <mat-form-field>
+    <label>Inhalt:</label>
+    <textarea
+        matInput
+        rows="6"
+        formControlName="content"
+    >
+    </textarea>
+
+    <!-- Error: Inhalt -->
+
+    <mat-error *ngIf="form.get('content').invalid">Gib einen Inhalt ein</mat-error>
+
+  </mat-form-field>
+
+    <!-- Button -->
+
+    <input type="submit" [disabled]="!form.valid" class="btn btn-primary" value="Post speichern">
+
+  </form>
+</mat-card>
+
+
+

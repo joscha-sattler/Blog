@@ -1,0 +1,53 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+
+
+      <div class="jumbotron">
+
+        <!-- Überschrift -->
+        <h1>Login</h1>
+
+        <form name="form" [formGroup]="form" (ngSubmit)="form.valid && onLogin()">
+
+          <!-- Benutzername -->
+
+          <div class="form-group">
+
+            <label>Benutzername:</label>
+            <input placeholder="Benutzername eingeben..." type="text"  class="form-control" formControlName="benutzername" [ngClass]="{'is-invalid':form.get('benutzername').touched && form.get('benutzername').invalid}"  />
+
+            <!-- Errors: Benutzername -->
+
+            <div *ngIf="form.get('benutzername').touched && form.get('benutzername').invalid"  class="invalid-feedback">
+              <div *ngIf="form.get('benutzername').errors.required">Benutzername darf nicht leer sein!</div>
+              <div *ngIf="form.get('benutzername').errors.minlength">Benutzername muss mindestens 4 Zeichen haben!</div>
+            </div>
+
+          </div>
+
+          <!-- Passwort -->
+
+          <div class="form-group">
+            <label>Passwort:</label>
+            <input placeholder="Passwort eingeben..." type="password" class="form-control"  formControlName="passwort" [ngClass]="{'is-invalid':form.get('passwort').touched && form.get('passwort').invalid}" />
+
+            <!-- Errors: Passwort -->
+
+            <div *ngIf="form.get('passwort').touched && form.get('passwort').invalid"  class="invalid-feedback">
+              <div *ngIf="form.get('passwort').errors.required">Passwort darf nicht leer sein!</div>
+              <div *ngIf="form.get('passwort').errors.minlength">Passwort muss mindestens 6 Zeichen haben!</div>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <input type="submit" [disabled]="!form.valid" class="btn btn-primary" value="Einloggen">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

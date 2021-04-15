@@ -1,0 +1,18 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@400;600&display=swap');
+
+/* Backround: #191921, Primary: #739F95 */
+
+
+html, body {
+  height: 100%;
+  font-family: 'Nunito', sans-serif;
+}
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background: #191921;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

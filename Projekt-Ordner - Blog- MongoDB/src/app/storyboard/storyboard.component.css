@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@400;600&display=swap');
+
+h1 {
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Nunito', sans-serif;
+  color: white;
+  font-weight: bold;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.btn-primary {
+  background: #739F95;
+  border: 2px solid white;
+  width:20%;
+  height: 75px;
+}
+
+.togglebutton {
+  text-align: center;
+  margin-top: 2%;
+
+}

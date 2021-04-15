@@ -1,0 +1,46 @@
+<mat-accordion multi="true" *ngIf="posts.length > 0 ">
+
+  <mat-expansion-panel *ngFor="let post of posts">
+
+    <!-- Titel -->
+
+    <mat-expansion-panel-header>
+      Titel: {{post.title}}
+
+    </mat-expansion-panel-header>
+
+    <!-- Bild -->
+
+    <div class="post-bild">
+      <img [src]="post.imagePath" [alt]="post.title">
+    </div>
+
+    <!-- Inhalt -->
+
+    <mat-action-row class="inhalt">
+      <p class="inhalt">{{post.content}}</p>
+    </mat-action-row>
+
+    <!-- Buttons -->
+
+    <mat-action-row *ngIf="userIsAuthenticated && userId == post.creator">
+      <a class="edit" mat-button [routerLink]="['/edit', post.id]">BEARBEITEN</a>
+      <button class="delete" (click)="onDelete(post.id)" mat-button>LÖSCHEN</button>
+    </mat-action-row>
+
+  </mat-expansion-panel>
+
+
+
+</mat-accordion>
+
+
+
+<mat-paginator *ngIf="posts.length > 0 " [length]="totalPosts" [pageSize]="postsPerPage"
+  [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)">
+  <!-- Wenn ein Event von paginator getriggered wird, z.B. nächste Seite geklickt -->
+</mat-paginator>
+
+<div class="info-text" *ngIf="posts.length <= 0">
+  Es gibt noch keine Posts!
+</div>

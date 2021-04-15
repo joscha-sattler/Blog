@@ -1,0 +1,54 @@
+<header>
+  <div class="container">
+
+    <!-- Icon + Name rechts --------------------------------------------------------->
+
+    <div class="box1" *ngIf="userIsAuthenticated">
+
+      <img class="logo" src="../../assets/icon.png" width="45px" height="45px" />
+      <span class="name">{{getUsername()}}</span> <!-- angepasster Name, je nachdem wer sich einloggt -->
+
+    </div>
+
+    <!-- Center Navigation Login/Regisrieren  --------------------------------------------------------->
+
+    <div class="box2" *ngIf="!userIsAuthenticated">
+      <nav>
+        <ul class="nav">
+
+          <li> <a routerLink="/login"> Login </a> </li>
+          <li> <a routerLink="/register"> Registrieren </a> </li>
+
+        </ul>
+      </nav>
+    </div>
+
+
+    <!-- Center Navigation wenn eingeloggt  --------------------------------------------------------->
+
+    <div class="box2" *ngIf="userIsAuthenticated">
+      <nav>
+        <ul class="nav">
+
+          <li> <a routerLink="/storyboard"> Storyboard </a> </li>
+          <li> <a routerLink="/post-erstellen"> + Post erstellen </a> </li>
+
+        </ul>
+      </nav>
+    </div>
+
+
+    <!-- Logout rechts --------------------------------------------------------->
+
+    <div class="box3" *ngIf="userIsAuthenticated">
+      <nav>
+        <ul class="nav2">
+
+          <li><input type="button" class="btn btn-primary" (click)="onLogout()" value="Logout"></li>
+
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+</header>
